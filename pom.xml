@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.nct</groupId>
+    <artifactId>nct</artifactId>
+    <version>2.0.0-RC1.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>NCT</name>
+    <description>Nutrition Calorie Tracker</description>
+
+    <modules>
+        <module>nct-business</module>
+        <module>nct-domain</module>
+        <module>nct-persistence</module>
+        <module>nct-ws</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.version>3.8.1</maven.compiler.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring-boot.version>2.6.4</spring-boot.version>
+        <hibernate.version>5.4.27.Final</hibernate.version>
+        <mysql.version>8.0.28</mysql.version>
+        <lombok.version>1.18.20</lombok.version>
+        <map-struct.version>1.4.2.Final</map-struct.version>
+        <springdoc-openapi.version>1.6.6</springdoc-openapi.version>
+        <easy-random-core.version>4.0.0</easy-random-core.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Keycloak -->
+            <dependency>
+                <groupId>org.keycloak.bom</groupId>
+                <artifactId>keycloak-adapter-bom</artifactId>
+                <version>16.0.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Spring boot -->
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- MySQL -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <scope>runtime</scope>
+                <version>${mysql.version}</version>
+            </dependency>
+
+            <!-- Lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- OpenAPI -->
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-ui</artifactId>
+                <version>${springdoc-openapi.version}</version>
+            </dependency>
+
+            <!-- MapStruct -->
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${map-struct.version}</version>
+            </dependency>
+
+            <!-- APACHE COMMONS LANG -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+            </dependency>
+
+            <!-- APACHE COMMONS TEXT -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-text</artifactId>
+            </dependency>
+
+            <!-- APACHE COMMONS COLLECTIONS -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+            </dependency>
+
+            <!-- Hibernate -->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+
+            <!-- Jacoco Maven Plugin -->
+            <dependency>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
+                <type>maven-plugin</type>
+            </dependency>
+
+            <!-- TEST -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring-boot.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jeasy</groupId>
+                <artifactId>easy-random-core</artifactId>
+                <version>${easy-random-core.version}</version>
+            </dependency>
+
+            <!-- NCT -->
+            <dependency>
+                <groupId>com.nct</groupId>
+                <artifactId>nct-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.nct</groupId>
+                <artifactId>nct-business-core-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.nct</groupId>
+                <artifactId>nct-business-core-impl</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.nct</groupId>
+                <artifactId>nct-persistence</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.nct</groupId>
+                <artifactId>nct-ws</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+         </dependencies>
+     </dependencyManagement>
+</project>

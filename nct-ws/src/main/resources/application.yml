@@ -1,0 +1,36 @@
+server:
+  port: 8081
+
+keycloak:
+  realm: Demo
+  auth-server-url: http://localhost:8080/auth
+  resource: springboot-keycloak
+  public-client: true
+  bearer-only: true
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: PASSWORD
+  jackson.default-property-inclusion: NON_NULL
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      dialect: org.hibernate.dialect.MySQL8Dialect
+
+nct:
+  meal-types:
+    breakfast: BREAKFAST
+    lunch: LUNCH
+    dinner: DINNER
+  ninja-api:
+    header: X-Api-Key
+    api-key: # your API key from api-ninjas
+    url: https://api.api-ninjas.com
+
