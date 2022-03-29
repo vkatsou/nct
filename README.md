@@ -28,14 +28,15 @@ The following commands are for arm based systems:
 * Run the keycloak instance
 
 
-    docker run -p 8080:8080 --name keycloak -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin koolwithk/keycloak-arm:16.0.0
+        docker run -p 8080:8080 --name keycloak -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin koolwithk/keycloak-arm:16.0.0
 
 * Run the MySQL instance
 
 
-    docker run -d -p 3307:3307 --name mysql -e MYSQL_ROOT_PASSWORD=pass mysql/mysql-server:latest-aarch64
+        docker run -d -p 3307:3307 --name mysql -e MYSQL_ROOT_PASSWORD=pass mysql/mysql-server:latest-aarch64
 
-###Default swagger url:
+
+### Default swagger url:
 
     http://localhost:8180/swagger-ui/index.html
     
