@@ -35,4 +35,8 @@ The following commands are for arm based systems:
 
     docker run -d -p 3307:3307 --name mysql -e MYSQL_ROOT_PASSWORD=pass mysql/mysql-server:latest-aarch64
 
+###Default swagger url:
+
+    http://localhost:8180/swagger-ui/index.html
+    
 Enjoy!
